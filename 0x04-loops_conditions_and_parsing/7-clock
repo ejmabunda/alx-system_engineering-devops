@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script loops 20 times, printing 1 through 20, additional information
+# is printed based on case.
+h=0  # hours
+m=1  # minutes
+echo "Hour: " $h
+while true
+do
+    if [ $m -eq 59 ]
+    then
+	echo $m
+	if [ $h -eq 12 ]
+	then
+	    break
+	else
+	    m=1
+	    h=$((h+1))
+	    echo "Hour: " $h
+	fi
+    else
+	echo $m
+	m=$((m+1))
+    fi
+done
